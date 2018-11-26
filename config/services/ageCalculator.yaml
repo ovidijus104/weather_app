@@ -1,0 +1,11 @@
+services:
+    app.age_calculator.manager:
+        public: true
+        class: App\AgeCalculator\Manager
+        arguments:
+          - '@app.age_calculator.calculate_age'
+          - '@app.age_calculator.is_adult'
+    app.age_calculator.calculate_age:
+        class: App\AgeCalculator\CalculateAge
+    app.age_calculator.is_adult:
+        class: App\AgeCalculator\IsAdult
